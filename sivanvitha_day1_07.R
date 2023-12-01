@@ -1,0 +1,12 @@
+box_no=c("box1","box2","box3","box4","box5","box6","box7","box8","box9","box10")
+pencil=c(9,25,23,12,11,6,7,8,9,10)
+df<-data.frame(box_no,pencil)
+#dataframe
+print(df)
+#mean
+mean(pencil)
+#median
+median(pencil)
+#mode
+mode=names(which.max(table(pencil)))
+print(mode)

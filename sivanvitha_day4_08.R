@@ -1,0 +1,8 @@
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+library(cluster)
+hclust_res <- hclust(dist(marks))
+cutree_res <- cutree(hclust_res, k = 3)
+clustering_bins <- as.factor(cutree_res)
+levels(clustering_bins) <- c("Low", "Medium", "High")
+hist(marks, breaks = max(cutree_res), col = "lightblue", main = "Clustering", xlab = "Marks")
+legend("topright", legend = c("Low", "Medium", "High"), fill = c("lightblue",))
